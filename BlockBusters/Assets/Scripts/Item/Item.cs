@@ -143,7 +143,7 @@ public class Item : MonoBehaviour
         GameObject parentObject = transform.parent.gameObject;
 
         //Remove the item's gameObject form the list and destroy afterward
-        ShapesSpawner.Instance.RemoveItem(parentObject);
+        BlocksManager.Instance.RemoveItem(parentObject);
 
         transform.DOScale(Vector3.zero, 0.5f)
             .SetEase(Ease.OutBack)

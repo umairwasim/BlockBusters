@@ -59,25 +59,25 @@ public class GameManager : MonoBehaviour
 
     private void Initialize()
     {
-        ShapesSpawner.Instance.InitializeLevelData(levelData[levelNo]);
+        BlocksManager.Instance.InitializeLevelData(levelData[levelNo]);
         UIManager.Instance.SetParScore(levelData[levelNo].parScore);
     }
 
     private void LevelWon()
     {
-        ShapesSpawner.Instance.StopItemsSpawning();
+        BlocksManager.Instance.StopItemsSpawning();
         UIManager.Instance.ShowLevelWonPanel();
     }
 
     private void LevelLost()
     {
-        ShapesSpawner.Instance.StopItemsSpawning();
+        BlocksManager.Instance.StopItemsSpawning();
         UIManager.Instance.ShowLevelLostPanel();
     }
 
     private void GameCompleted()
     {
-        ShapesSpawner.Instance.StopItemsSpawning();
+        BlocksManager.Instance.StopItemsSpawning();
         UIManager.Instance.ShowGameCompletedPanel();
     }
 
