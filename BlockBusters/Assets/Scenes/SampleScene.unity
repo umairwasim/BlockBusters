@@ -1007,8 +1007,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc36674995bbd834f812a4b0e2499752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefabs: []
-  mapsArray: []
+  itemPrefabs:
+  - {fileID: 4259214827725308714, guid: d311a98cb5de45447aec7d3363d4c0cd, type: 3}
+  - {fileID: 2112375991555893355, guid: 44abf9ec3eb19274892c6722d3410d48, type: 3}
+  - {fileID: 125976029928418075, guid: 09a2b6c21de732342b57eee225e59122, type: 3}
+  - {fileID: 775189808290839788, guid: ca848cbff3027d74ebd193fcd2ae3109, type: 3}
+  - {fileID: 7336667172251678278, guid: d9f2f9c2755d1b849b3e093a45dbe422, type: 3}
+  mapsArray:
+  - {fileID: 8022260141140742523, guid: ef90b0a9b0cc85b438b906d857bb5b7a, type: 3}
+  - {fileID: 789252375852168775, guid: 34c41c1367933934ba590be8ccc8f5e1, type: 3}
+  - {fileID: 7164005218857486912, guid: 3b68d7757cdbfa6459c078359181e7d1, type: 3}
   layerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -1057,7 +1065,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 4a18217ce28f5604c88ed24749d5d37d, type: 2}
+  - {fileID: 11400000, guid: 822e9a91dc2361644b1087c5f3ff6e69, type: 2}
+  - {fileID: 11400000, guid: 3bb979d428017be43aabc5e4820ad7c8, type: 2}
 --- !u!4 &1057417957 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7503129361461793018, guid: 3b68d7757cdbfa6459c078359181e7d1, type: 3}
