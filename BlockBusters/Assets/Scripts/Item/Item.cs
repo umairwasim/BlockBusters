@@ -13,8 +13,6 @@ public enum ItemObjType
     Explosive,
 }
 
-
-
 public class Item : MonoBehaviour
 {
     [NonSerialized]
@@ -104,8 +102,8 @@ public class Item : MonoBehaviour
         transform.DOPunchScale(Vector3.one * 0.5f, 5f)
                  .OnComplete(() =>
                  {
-                    //Shake camera and display Vfx
-                    CameraShake.Instance.Shake(5f, 0.25f);
+                     //Shake camera and display Vfx
+                     CameraShake.Instance.Shake(5f, 0.25f);
                      VfxManager.Instance.DisplayVfx(VfxManager.Instance.explosionVfx, transform.position);
                      AudioManager.Instance.PlaySound(AudioManager.Instance.explosionSfx);
                  });
