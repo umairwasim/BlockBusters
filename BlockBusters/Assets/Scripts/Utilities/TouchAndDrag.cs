@@ -16,7 +16,7 @@ public class TouchAndDrag : MonoBehaviour
 
     private void Start()
     {
-        canDrag = true;
+        EnableDrag();
     }
 
     private void OnMouseDrag()
@@ -50,4 +50,18 @@ public class TouchAndDrag : MonoBehaviour
             item.canInteract = false;
         }
     }
+
+    #region Helper Functions
+
+    public void EnableDrag()
+    {
+        canDrag = true;
+    }
+
+    public void DisableDrag()
+    {
+        canDrag = false;
+    }
+
+    #endregion
 }
