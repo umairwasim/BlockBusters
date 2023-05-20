@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 789359346506576289}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Explosive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 142571262547723041}
   - component: {fileID: 3372438678379999914}
   - component: {fileID: 1172200879565542953}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,10 +174,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8949291724329161666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b6078c37bff304eb0700ce30f0f900, type: 3}
+  m_Script: {fileID: 11500000, guid: 28d5ffbfbdabca84387af3e5ef82b25e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canDrag: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 128

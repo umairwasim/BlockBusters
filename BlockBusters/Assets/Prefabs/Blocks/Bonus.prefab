@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1593001486113108689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 873783805275056426}
   - component: {fileID: 7962461392556216640}
   - component: {fileID: 2733649650151939095}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,10 +174,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6979841811336646834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b6078c37bff304eb0700ce30f0f900, type: 3}
+  m_Script: {fileID: 11500000, guid: 28d5ffbfbdabca84387af3e5ef82b25e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canDrag: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 128
