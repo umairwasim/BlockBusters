@@ -94,7 +94,7 @@ public class BlocksManager : MonoBehaviour
             //wai for random time interval
             yield return new WaitForSeconds(Random.Range(minRange, maxRange));
 
-            //if there is an arena beneath the spawn manager , then spawn object
+            //if there is platform beneath the spawn manager , then spawn object
             if (Physics.Raycast(randomPosition, Vector3.down, float.MaxValue, layerMask))
             {
                 // Spawn the object at the random position
