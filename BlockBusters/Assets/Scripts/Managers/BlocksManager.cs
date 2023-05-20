@@ -20,7 +20,7 @@ public class BlocksManager : MonoBehaviour
     private Vector3 maxBounds; // The maximum bounds
     private Collider mapCollider;
 
-    private List<GameObject> items = new();
+    private readonly List<GameObject> items = new();
 
     private const string LEVEL = "Level";
 
@@ -36,6 +36,7 @@ public class BlocksManager : MonoBehaviour
             StartCoroutine(SpawnMap());
             StartCoroutine(SpawnItemsRoutine());
         }
+
         levelNo = PlayerPrefs.GetInt(LEVEL, 0);
     }
 
@@ -106,6 +107,7 @@ public class BlocksManager : MonoBehaviour
         yield return new WaitForSeconds(spawnInterval);
 
         //Call spawning recursively if it is within the spawn limit
+        Debug.Log("items.Count " + items.Count + " spawnLimit " + spawnLimit);
         yield return new WaitUntil(() => items.Count <= spawnLimit);
         StartCoroutine(SpawnItemsRoutine());
     }
