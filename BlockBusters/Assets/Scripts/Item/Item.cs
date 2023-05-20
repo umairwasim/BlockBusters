@@ -13,10 +13,14 @@ public enum ItemObjType
     Explosive,
 }
 
+
+
 public class Item : MonoBehaviour
 {
     [NonSerialized]
     public CollisionPool myPool = null;
+
+    public ItemType itemType;
     public ItemObjType itemObjectType;
 
     [Header("Item Properties")]
@@ -41,7 +45,7 @@ public class Item : MonoBehaviour
             return;
 
         //Check if the collision is on same Dragable layer, if not return
-        if (collision.collider.gameObject.layer != LayerMask.NameToLayer(DRAGABLE))
+        if (collision.gameObject.layer != LayerMask.NameToLayer(DRAGABLE))
             return;
 
         //Get Collision Item
@@ -54,7 +58,7 @@ public class Item : MonoBehaviour
             {
                 CollisionPool.CreateNewPool(this, collisionItem);
             }
-            //Add myitem to collided item's pool, also add the item collided with
+            //Add my item to collided item's pool, also add the item it collided with
             else
             {
                 collisionItem.myPool.CollidedItem(collisionItem);
@@ -65,6 +69,68 @@ public class Item : MonoBehaviour
     }
 
     #region Animate Group
+    /// <summary>
+    /// TODO: Clean code repetition 
+    /// Make an Item base class and inplement logic there or some other way to remove
+    /// redundant code
+    /// </summary>
+
+    public void AnimateBlocksPool(ItemCategory type)
+    {
+        if (isAnimating == false)
+        {
+            isAnimating = true;
+            StopInteraction();
+
+            switch (type)
+            {
+                case ItemCategory.Ordinary:
+                    AnimateOrdinaryBlocks();
+                    break;
+                case ItemCategory.Bonus:
+                    AnimateBonusBlocks();
+                    break;
+                case ItemCategory.Explosive:
+                    AnimateExplosiveBlocks();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    private void AnimateExplosiveBlocks()
+    {
+        transform.DOPunchScale(Vector3.one * 0.5f, 5f)
+                 .OnComplete(() =>
+                 {
+                    //Shake camera and display Vfx
+                    CameraShake.Instance.Shake(5f, 0.25f);
+                     VfxManager.Instance.DisplayVfx(VfxManager.Instance.explosionVfx, transform.position);
+                     AudioManager.Instance.PlaySound(AudioManager.Instance.explosionSfx);
+                 });
+    }
+
+    private void AnimateBonusBlocks()
+    {
+        transform.DOScale(Vector3.one * 1.1f, 3f);
+        AudioManager.Instance.PlaySound(AudioManager.Instance.bonusSfx);
+
+        if (itemObjectType == ItemObjType.Bonus)
+        {
+            VfxManager.Instance.DisplayVfx(VfxManager.Instance.bonusVfx, transform.position);
+            //Show Feedback Pop Up
+            FeedbackPopUp.CreateFeedback(transform.position, BONUS);
+        }
+    }
+
+    private void AnimateOrdinaryBlocks()
+    {
+        transform.DOShakePosition(3f, 0.1f, 10, 0);
+        AudioManager.Instance.PlaySound(AudioManager.Instance.matchSfx);
+        VfxManager.Instance.DisplayVfx(VfxManager.Instance.identicalVfx, transform.position);
+    }
+
 
     public void AnimateSameGrouping()
     {
