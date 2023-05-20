@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parScore: 20
   spawnInterval: 8
-  minRange: 4
-  maxRange: 2
+  minRange: 2
+  maxRange: 4
