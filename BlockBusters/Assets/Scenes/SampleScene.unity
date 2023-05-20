@@ -496,15 +496,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00091342fc4cb1d478bad6eb014488ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 0}
-  sfxSource: {fileID: 0}
-  collisionSfx: {fileID: 0}
-  matchSfx: {fileID: 0}
-  fossilizeSfx: {fileID: 0}
-  explosionSfx: {fileID: 0}
-  bonusSfx: {fileID: 0}
-  buttonClickSfx: {fileID: 0}
-  outOfBoundaSfx: {fileID: 0}
+  musicSource: {fileID: 541584933}
+  sfxSource: {fileID: 1611205832}
+  collisionSfx: {fileID: 8300000, guid: c0ab75eb1be3bfc4383535769931f046, type: 3}
+  matchSfx: {fileID: 8300000, guid: 2e01e9732088f5448adb9c03a963bf3a, type: 3}
+  fossilizeSfx: {fileID: 8300000, guid: 6608c61293d962b4ca73c62603a4774d, type: 3}
+  explosionSfx: {fileID: 8300000, guid: 4b4dd7245f6104c8c8eb07ccf6b386ed, type: 3}
+  bonusSfx: {fileID: 8300000, guid: 74e83a318dd39ac46a3e14465709f1c2, type: 3}
+  buttonClickSfx: {fileID: 8300000, guid: 4afbfccb647b4c843b9367a0c642ddf8, type: 3}
+  outOfBoundaSfx: {fileID: 8300000, guid: df729d213c4be44a9b55cd109f5cd4f9, type: 3}
 --- !u!1 &311558235
 GameObject:
   m_ObjectHideFlags: 0
