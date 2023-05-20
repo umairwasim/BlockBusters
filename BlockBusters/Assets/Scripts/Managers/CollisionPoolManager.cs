@@ -79,7 +79,8 @@ public class CollisionPool : IDisposable
         {
             if (item.itemObjectType == collidedItem.itemObjectType)
             {
-                AnimateSameGroup();
+                AnimatePoolBlocks(ItemCategory.Ordinary);
+                // AnimateSameGroup();
                 return;
             }
             //if different objects are collided 
@@ -89,13 +90,15 @@ public class CollisionPool : IDisposable
                 if (item.itemObjectType == ItemObjType.Explosive ||
                     collidedItem.itemObjectType == ItemObjType.Explosive)
                 {
-                    AnimateExplosiveGroup();
+                    AnimatePoolBlocks(ItemCategory.Explosive);
+                    //AnimateExplosiveGroup();
                     return;
                 }
                 else if (item.itemObjectType == ItemObjType.Bonus ||
                     collidedItem.itemObjectType == ItemObjType.Bonus)
                 {
-                    AnimateBonusGroup();
+                    AnimatePoolBlocks(ItemCategory.Bonus);
+                    //AnimateBonusGroup();
                     return;
                 }
                 else
@@ -109,6 +112,17 @@ public class CollisionPool : IDisposable
     }
 
     #region Animate Group
+
+    private void AnimatePoolBlocks(ItemCategory itemCategory)
+    {
+        for (int i = 0; i < collidedList.Count; i++)
+        {
+            if (!collidedList[i].isAnimating)
+            {
+                collidedList[i].AnimateBlocksPool(itemCategory);
+            }
+        }
+    }
 
     private void AnimateBonusGroup()
     {
@@ -129,7 +143,7 @@ public class CollisionPool : IDisposable
             if (!collidedList[i].isAnimating)
             {
                 collidedList[i].AnimateExplosiveGrouping();
-                score += baseScore * bonusMultipier;
+                //score += baseScore * bonusMultipier;
             }
         }
     }
