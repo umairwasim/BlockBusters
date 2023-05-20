@@ -26,7 +26,6 @@ public class TouchAndDrag : MonoBehaviour
         {
             //Shoot a ray from screen point in the direction of mouse position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //if it hits an item
             if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, layerMask))
             {
                 //place that item to the hit point
@@ -52,25 +51,3 @@ public class TouchAndDrag : MonoBehaviour
         }
     }
 }
-
-//    #region Old Implementaton 
-
-//    private Vector3 screenPoint;
-//    private Vector3 offset;
-
-//    private void OnMouseDown()
-//    {
-//        screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-//        offset = transform.position - Camera.main.ScreenToWorldPoint(new Vector3
-//            (Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-//    }
-
-//    private void OnMouseDrag()
-//    {
-//        Vector3 currentScreenPoint = new(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-//        Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenPoint) + offset;
-//        transform.position = currentPosition;
-//    }
-//}
-
-//#endregion
