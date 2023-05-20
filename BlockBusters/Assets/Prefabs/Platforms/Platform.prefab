@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 123897875984641277}
   m_Layer: 0
-  m_Name: alt_arena2
+  m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2386686907436393711}
   - component: {fileID: 1169402332655468667}
   - component: {fileID: 4223677061077113034}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
