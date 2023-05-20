@@ -1174,11 +1174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643a223cbf6d14146b258497c536a836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionVfx: {fileID: 0}
-  bonusVfx: {fileID: 0}
-  fossilizeVfx: {fileID: 0}
-  identicalVfx: {fileID: 0}
-  outOfBoundsVfx: {fileID: 0}
+  explosionVfx: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
+  bonusVfx: {fileID: 1590415177872986601, guid: acdb90624a404aa438447006f1026065, type: 3}
+  fossilizeVfx: {fileID: 6294508013172393196, guid: 043176b6a68be2b43b073aaaa4782c7d, type: 3}
+  identicalVfx: {fileID: 5824670795371433373, guid: f6fd568b816c64943a44efc3add3a881, type: 3}
+  outOfBoundsVfx: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!1 &1611205830
 GameObject:
   m_ObjectHideFlags: 0
