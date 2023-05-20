@@ -33,7 +33,7 @@ public class CollisionPoolManager : MonoBehaviour
     }
 }
 
-[System.Serializable]
+[Serializable]
 public class CollisionPool : IDisposable
 {
     //List of collided items 
@@ -80,6 +80,7 @@ public class CollisionPool : IDisposable
             if (item.itemObjectType == collidedItem.itemObjectType)
             {
                 AnimatePoolBlocks(ItemCategory.Ordinary);
+                score += baseScore * bonusMultipier;
                 // AnimateSameGroup();
                 return;
             }
@@ -98,12 +99,13 @@ public class CollisionPool : IDisposable
                     collidedItem.itemObjectType == ItemObjType.Bonus)
                 {
                     AnimatePoolBlocks(ItemCategory.Bonus);
+                    score += baseScore * bonusMultipier;
                     //AnimateBonusGroup();
                     return;
                 }
                 else
                 {
-                    FossilizeGroup();
+                    FossilizePoolBlocks();
                     return;
                 }
             }
@@ -124,49 +126,51 @@ public class CollisionPool : IDisposable
         }
     }
 
-    private void AnimateBonusGroup()
-    {
-        for (int i = 0; i < collidedList.Count; i++)
-        {
-            if (!collidedList[i].isAnimating)
-            {
-                collidedList[i].AnimateBonusGrouping();
-                score += baseScore * bonusMultipier;
-            }
-        }
-    }
+    #region Redundant Code
+    //private void AnimateSameGroup()
+    //{
+    //    for (int i = 0; i < collidedList.Count; i++)
+    //    {
+    //        if (!collidedList[i].isAnimating)
+    //        {
+    //            collidedList[i].AnimateSameGrouping();
+    //            score += baseScore * bonusMultipier;
+    //        }
+    //    }
+    //}
 
-    private void AnimateExplosiveGroup()
-    {
-        for (int i = 0; i < collidedList.Count; i++)
-        {
-            if (!collidedList[i].isAnimating)
-            {
-                collidedList[i].AnimateExplosiveGrouping();
-                //score += baseScore * bonusMultipier;
-            }
-        }
-    }
+    //private void AnimateBonusGroup()
+    //{
+    //    for (int i = 0; i < collidedList.Count; i++)
+    //    {
+    //        if (!collidedList[i].isAnimating)
+    //        {
+    //            collidedList[i].AnimateBonusGrouping();
+    //            score += baseScore * bonusMultipier;
+    //        }
+    //    }
+    //}
 
-    private void FossilizeGroup()
+    //private void AnimateExplosiveGroup()
+    //{
+    //    for (int i = 0; i < collidedList.Count; i++)
+    //    {
+    //        if (!collidedList[i].isAnimating)
+    //        {
+    //            collidedList[i].AnimateExplosiveGrouping();
+    //            //score += baseScore * bonusMultipier;
+    //        }
+    //    }
+    //}
+    #endregion
+
+    private void FossilizePoolBlocks()
     {
         for (int i = 0; i < collidedList.Count; i++)
         {
             collidedList[i].FossilizeGrouping(Color.gray);
         }
         lifeLost = 1;
-    }
-
-    private void AnimateSameGroup()
-    {
-        for (int i = 0; i < collidedList.Count; i++)
-        {
-            if (!collidedList[i].isAnimating)
-            {
-                collidedList[i].AnimateSameGrouping();
-                score += baseScore * bonusMultipier;
-            }
-        }
     }
 
     #endregion
