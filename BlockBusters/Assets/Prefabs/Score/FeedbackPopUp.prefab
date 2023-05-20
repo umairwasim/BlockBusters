@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1493881222986651759}
   - component: {fileID: 1493881222986651756}
   - component: {fileID: 1493881222986651753}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: FeedbackPopUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
