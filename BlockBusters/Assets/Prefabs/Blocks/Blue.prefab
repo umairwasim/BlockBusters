@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513cdafd620df4546b49d3b4df1f379c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: {fileID: 11400000, guid: 80cf2cdae2ad6e14f89cf0c840db87f2, type: 2}
   itemObjectType: 0
   baseScore: 1
   bonusMultiplier: 1
