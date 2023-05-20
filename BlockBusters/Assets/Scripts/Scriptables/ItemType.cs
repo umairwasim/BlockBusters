@@ -2,11 +2,9 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public enum ItemObjectType
+public enum ItemCategory
 {
-    Blue,
-    Red,
-    Green,
+    Ordinary,
     Bonus,
     Explosive,
 }
@@ -14,8 +12,10 @@ public enum ItemObjectType
 [CreateAssetMenu(fileName = "Item", menuName = "Item/ItemType")]
 public class ItemType : ScriptableObject
 {
-    public ItemObjectType itemObjectType;
-    public ItemObjectType GetItemType() => itemObjectType;
-    public bool isExplosiveType() => itemObjectType == ItemObjectType.Explosive;
-    public bool isBonusType() => itemObjectType == ItemObjectType.Bonus;
+    public ItemCategory itemCategoryType;
+    public ItemCategory GetItemType() => itemCategoryType;
+
+    public bool isOrdinaryType() => itemCategoryType == ItemCategory.Ordinary;
+    public bool isExplosiveType() => itemCategoryType == ItemCategory.Explosive;
+    public bool isBonusType() => itemCategoryType == ItemCategory.Bonus;
 }
