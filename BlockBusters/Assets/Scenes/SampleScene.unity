@@ -1541,8 +1541,16 @@ PrefabInstance:
       value: alt_arena2
       objectReference: {fileID: 0}
     - target: {fileID: 789252375852168775, guid: 34c41c1367933934ba590be8ccc8f5e1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 789252375852168775, guid: 34c41c1367933934ba590be8ccc8f5e1, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610380263671615134, guid: 34c41c1367933934ba590be8ccc8f5e1, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34c41c1367933934ba590be8ccc8f5e1, type: 3}
@@ -1553,6 +1561,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 916227382}
     m_Modifications:
+    - target: {fileID: 1358117829686815138, guid: ef90b0a9b0cc85b438b906d857bb5b7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7214515590709922753, guid: ef90b0a9b0cc85b438b906d857bb5b7a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1618,6 +1630,10 @@ PrefabInstance:
       value: alt_arena1
       objectReference: {fileID: 0}
     - target: {fileID: 8022260141140742523, guid: ef90b0a9b0cc85b438b906d857bb5b7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022260141140742523, guid: ef90b0a9b0cc85b438b906d857bb5b7a, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1630,9 +1646,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 916227382}
     m_Modifications:
+    - target: {fileID: 2226576099816043161, guid: 3b68d7757cdbfa6459c078359181e7d1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7164005218857486912, guid: 3b68d7757cdbfa6459c078359181e7d1, type: 3}
       propertyPath: m_Name
       value: alt_arena3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164005218857486912, guid: 3b68d7757cdbfa6459c078359181e7d1, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7164005218857486912, guid: 3b68d7757cdbfa6459c078359181e7d1, type: 3}
       propertyPath: m_IsActive
