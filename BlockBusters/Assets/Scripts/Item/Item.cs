@@ -67,11 +67,6 @@ public class Item : MonoBehaviour
     }
 
     #region Animate Group
-    /// <summary>
-    /// TODO: Clean code repetition 
-    /// Make an Item base class and inplement logic there or some other way to remove
-    /// redundant code
-    /// </summary>
 
     public void AnimateBlocksPool(ItemCategory type)
     {
@@ -128,55 +123,6 @@ public class Item : MonoBehaviour
         AudioManager.Instance.PlaySound(AudioManager.Instance.matchSfx);
         VfxManager.Instance.DisplayVfx(VfxManager.Instance.identicalVfx, transform.position);
     }
-
-    #region Redundant Code
-    //public void AnimateSameGrouping()
-    //{
-    //    if (isAnimating == false)
-    //    {
-    //        isAnimating = true;
-    //        StopInteraction();
-    //        transform.DOShakePosition(3f, 0.1f, 10, 0);
-    //        AudioManager.Instance.PlaySound(AudioManager.Instance.matchSfx);
-    //        VfxManager.Instance.DisplayVfx(VfxManager.Instance.identicalVfx, transform.position);
-    //    }
-    //}
-
-    //public void AnimateExplosiveGrouping()
-    //{
-    //    if (isAnimating == false)
-    //    {
-    //        isAnimating = true;
-    //        StopInteraction();
-    //        transform.DOPunchScale(Vector3.one * 0.5f, 5f)
-    //            .OnComplete(() =>
-    //            {
-    //                //Shake camera and display Vfx
-    //                CameraShake.Instance.Shake(5f, 0.25f);
-    //                VfxManager.Instance.DisplayVfx(VfxManager.Instance.explosionVfx, transform.position);
-    //                AudioManager.Instance.PlaySound(AudioManager.Instance.explosionSfx);
-    //            });
-    //    }
-    //}
-
-    //public void AnimateBonusGrouping()
-    //{
-    //    if (isAnimating == false)
-    //    {
-    //        isAnimating = true;
-    //        StopInteraction();
-    //        transform.DOScale(Vector3.one * 1.1f, 3f);
-    //        AudioManager.Instance.PlaySound(AudioManager.Instance.bonusSfx);
-
-    //        if (itemObjectType == ItemObjType.Bonus)
-    //        {
-    //            VfxManager.Instance.DisplayVfx(VfxManager.Instance.bonusVfx, transform.position);
-    //            //Show Feedback Pop Up
-    //            FeedbackPopUp.CreateFeedback(transform.position, BONUS);
-    //        }
-    //    }
-    //}
-    #endregion
 
     public void FossilizeGrouping(Color fossilizeColor)
     {
