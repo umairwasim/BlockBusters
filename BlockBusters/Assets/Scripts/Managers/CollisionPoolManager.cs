@@ -126,44 +126,6 @@ public class CollisionPool : IDisposable
         }
     }
 
-    #region Redundant Code
-    //private void AnimateSameGroup()
-    //{
-    //    for (int i = 0; i < collidedList.Count; i++)
-    //    {
-    //        if (!collidedList[i].isAnimating)
-    //        {
-    //            collidedList[i].AnimateSameGrouping();
-    //            score += baseScore * bonusMultipier;
-    //        }
-    //    }
-    //}
-
-    //private void AnimateBonusGroup()
-    //{
-    //    for (int i = 0; i < collidedList.Count; i++)
-    //    {
-    //        if (!collidedList[i].isAnimating)
-    //        {
-    //            collidedList[i].AnimateBonusGrouping();
-    //            score += baseScore * bonusMultipier;
-    //        }
-    //    }
-    //}
-
-    //private void AnimateExplosiveGroup()
-    //{
-    //    for (int i = 0; i < collidedList.Count; i++)
-    //    {
-    //        if (!collidedList[i].isAnimating)
-    //        {
-    //            collidedList[i].AnimateExplosiveGrouping();
-    //            //score += baseScore * bonusMultipier;
-    //        }
-    //    }
-    //}
-    #endregion
-
     private void FossilizePoolBlocks()
     {
         for (int i = 0; i < collidedList.Count; i++)
