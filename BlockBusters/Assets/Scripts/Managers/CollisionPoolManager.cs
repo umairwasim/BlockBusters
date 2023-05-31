@@ -200,7 +200,7 @@ public class CollisionPool : IDisposable
         for (int i = 0; i < collidedList.Count; i++)
         {
             //Disable that item
-            collidedList[i].DisableItem(0.01f);
+            collidedList[i].DisableItem();
         }
 
         //Remove this Pool form Collision Pools list and dispose
