@@ -5,8 +5,7 @@ public class LevelBounds : MonoBehaviour
     public static LevelBounds Instance;
 
     private const string DRAGABLE = "Dragable";
-    private const string DROPPED = " OOPS...";
-
+  
     private void Awake()
     {
         Instance = this;
@@ -22,7 +21,7 @@ public class LevelBounds : MonoBehaviour
         if (other.TryGetComponent(out Item item))
         {
             item.StopInteraction();
-            item.DisableItem(0.01f);
+            item.DisableItem();
             VfxManager.Instance.DisplayVfx(VfxManager.Instance.outOfBoundsVfx, item.transform.position);
             AudioManager.Instance.PlaySound(AudioManager.Instance.outOfBoundaSfx);
         }
