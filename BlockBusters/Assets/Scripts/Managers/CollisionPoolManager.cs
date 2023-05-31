@@ -7,6 +7,7 @@ public class CollisionPoolManager : MonoBehaviour
 {
     public static CollisionPoolManager Instance;
 
+    [HideInInspector]
     public List<CollisionPool> collisionPools = new();
 
     private void Awake()
