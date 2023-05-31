@@ -197,7 +197,7 @@ public class Item : MonoBehaviour
 
     #region Disable Item
 
-    public void DisableItem(float delay)
+    public void DisableItem(float delay = 0.01f)
     {
         StartCoroutine(DisableItemRoutine(delay));
     }
