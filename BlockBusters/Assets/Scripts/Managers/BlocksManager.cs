@@ -14,12 +14,15 @@ public class BlocksManager : MonoBehaviour
     private int levelNo;
     private int spawnLimit = 20;
     private float spawnInterval;
-    private float minRange;
     private float maxRange;
+    private float minRange;
     private Vector3 minBounds; // The minimum bounds
     private Vector3 maxBounds; // The maximum bounds
     private Collider mapCollider;
 
+    private readonly float delay = 0.5f;
+    private readonly float defaultFOV = 15f;
+    private readonly float zoomedFOV = 20f;
     private readonly List<GameObject> items = new();
 
     private const string LEVEL = "Level";
@@ -50,10 +53,10 @@ public class BlocksManager : MonoBehaviour
         maxRange = level.maxRange;
 
         //set FOV for levels
-        if (levelNo > 1)
-            CameraShake.Instance.SetCameraFOV(20f);
+        if (levelNo < 1)
+            CameraShake.Instance.SetCameraFOV(defaultFOV);
         else
-            CameraShake.Instance.SetCameraFOV(15f);
+            CameraShake.Instance.SetCameraFOV(zoomedFOV);
     }
 
     private IEnumerator SpawnMap()
@@ -69,7 +72,9 @@ public class BlocksManager : MonoBehaviour
         if (levelNo < mapsArray.Length)
         {
             mapsArray[levelNo].SetActive(true);
-            mapsArray[levelNo].transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.InElastic);
+            mapsArray[levelNo].transform
+                .DOScale(Vector3.one, delay)
+                .SetEase(Ease.InElastic);
 
             //Assign map collider for bounds calculation
             mapCollider = mapsArray[levelNo].GetComponentInChildren<Collider>();
@@ -78,7 +83,7 @@ public class BlocksManager : MonoBehaviour
 
     private IEnumerator SpawnItemsRoutine()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(delay);
 
         for (int i = 0; i < itemPrefabs.Length; i++)
         {
@@ -92,7 +97,7 @@ public class BlocksManager : MonoBehaviour
             float z = Random.Range(minBounds.z, maxBounds.z);
             Vector3 randomPosition = new(x, y, z);
 
-            //wai for random time interval
+            //wait for random time interval
             yield return new WaitForSeconds(Random.Range(minRange, maxRange));
 
             //if there is platform beneath the spawn manager , then spawn object
@@ -107,7 +112,6 @@ public class BlocksManager : MonoBehaviour
         yield return new WaitForSeconds(spawnInterval);
 
         //Call spawning recursively if it is within the spawn limit
-        Debug.Log("items.Count " + items.Count + " spawnLimit " + spawnLimit);
         yield return new WaitUntil(() => items.Count <= spawnLimit);
         StartCoroutine(SpawnItemsRoutine());
     }
